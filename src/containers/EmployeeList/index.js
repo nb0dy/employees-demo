@@ -12,7 +12,7 @@ class Employees extends PureComponent {
   }
 
   render() {
-    return this.state.employees.map(employee => <Employee employee={employee} onEmployeeClick={this.onEmployeeClick}/>)
+    return this.state.employees.map(employee => <Employee key={employee.id} employee={employee} onEmployeeClick={this.onEmployeeClick}/>)
   }
 }
 
