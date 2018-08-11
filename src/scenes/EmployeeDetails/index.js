@@ -16,20 +16,20 @@ class EmployeeDetails extends PureComponent {
   handlePrevButtonClick = () => {
     let prevId = parseInt(this.props.match.params.id) - 1
     if (prevId < this.minId) prevId = this.maxId
-    this.goToMember(prevId)
+    this.goToEmployee(prevId)
   }
 
   handleNextButtonClick = () => {
     let nextId = parseInt(this.props.match.params.id) + 1
     if (nextId > this.maxId) nextId = this.minId
-    this.goToMember(nextId)
+    this.goToEmployee(nextId)
   }
 
   handleCloseButtonClick = () => {
     this.props.history.push('/')
   }
 
-  goToMember = memberId => this.props.history.push(`/member/${memberId}`)
+  goToEmployee = employeeId => this.props.history.push(`/employee/${employeeId}`)
 
   render() {
     const employee = employees.find(employee => employee.id === parseInt(this.props.match.params.id))

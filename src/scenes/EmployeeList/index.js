@@ -9,7 +9,7 @@ class EmployeeList extends PureComponent {
   }
 
   onEmployeeClick = id => {
-    this.props.history.push(`member/${id}`)
+    this.props.history.push(`employee/${id}`)
   }
 
   render() {
