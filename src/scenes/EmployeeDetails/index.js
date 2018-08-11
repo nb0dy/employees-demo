@@ -33,7 +33,7 @@ class EmployeeDetails extends PureComponent {
     console.log('state', this.minId, this.maxId)
     if (!this.state.employee) return
     return (
-      <div className="container">
+      <div className="employee-details">
         <div className="wrapper">
           <div className="prev" onClick={this.handlePrevButtonClick} />
           <div className="info">
