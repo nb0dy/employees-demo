@@ -1,6 +1,12 @@
 import React, { PureComponent } from 'react';
 import employees from './../../store/employee'
+import { TransitionGroup, CSSTransition }from "react-transition-group";
 import './EmployeeDetails.css'
+
+const firstChild = props => {
+  const childrenArray = React.Children.toArray(props.children)
+  return childrenArray[0] || null
+}
 
 class EmployeeDetails extends PureComponent {
   minId = employees.reduce((prev, curr) => prev.id < curr.id ? prev : curr).id
@@ -33,10 +39,17 @@ class EmployeeDetails extends PureComponent {
       <div className="employee-details">
         <div className="employee-details-wrapper">
           <div className="prev" onClick={this.handlePrevButtonClick} />
-          <div className="info">
-            <div className="role">{employee.role}</div>
-            <div className="name">{employee.name}</div>
-          </div>
+          <TransitionGroup component={firstChild}>
+            <CSSTransition
+              key={employee.id}
+              timeout={300}
+              classNames="fade">
+              <div className="info">
+                <div className="role">{employee.role}</div>
+                <div className="name">{employee.name}</div>
+              </div>
+            </CSSTransition>
+          </TransitionGroup>
           <div className="next" onClick={this.handleNextButtonClick} />
           <div className="close" onClick={this.handleCloseButtonClick} />
         </div>
