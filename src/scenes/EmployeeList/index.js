@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import Employee from './../../components/Employee'
+import Employee from './components/Employee'
 import employess from './../../store/employee'
 
 class Employees extends PureComponent {
