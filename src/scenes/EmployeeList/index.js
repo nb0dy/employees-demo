@@ -1,10 +1,11 @@
 import React, { PureComponent } from 'react';
 import Employee from './components/Employee'
-import employess from './../../store/employee'
+import employees from './../../store/employee'
+import './EmployeeList.css'
 
-class Employees extends PureComponent {
+class EmployeeList extends PureComponent {
   state = {
-    employees: employess
+    employees: employees
   }
 
   onEmployeeClick = id => {
@@ -12,8 +13,21 @@ class Employees extends PureComponent {
   }
 
   render() {
-    return this.state.employees.map(employee => <Employee key={employee.id} employee={employee} onEmployeeClick={this.onEmployeeClick}/>)
+    return (
+      <div className="employee-list">
+        <section className="wrapper">
+          <header>
+            <h1>Meet our team</h1>
+          </header>
+          <div className="employees">
+            {this.state.employees.map(employee => (
+              <Employee key={employee.id} employee={employee} onEmployeeClick={this.onEmployeeClick}/>
+            ))}
+          </div>
+        </section>
+      </div>
+    )
   }
 }
 
-export default Employees;
+export default EmployeeList;
