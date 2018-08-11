@@ -1,0 +1,56 @@
+.container {
+  background-image: url("/images/background-member.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  display: flex;
+
+  .wrapper {
+    position: relative;
+    margin: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .prev, .next {
+      width: 42px;
+      height: 71px;
+      cursor: pointer;
+    }
+
+    .prev {
+      background-image: url("/images/left-arrow.png");
+    }
+
+    .next {
+      background-image: url("/images/right-arrow.png");
+    }
+
+    .close {
+      position: absolute;
+      background-image: url("/images/close.png");
+      width: 59px;
+      height: 59px;
+      right: 0;
+      top: 0;
+      cursor: pointer;
+    }
+
+    .info {
+      padding: 60px 40px;
+      width: auto;
+      border: 5px dashed rgba(255, 255, 255, .3);
+      color: #fff;
+      text-align: center;
+      font-size: 9em;
+      text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+
+      .role {
+        font-size: 0.6em;
+      }
+    }
+  }
+}
